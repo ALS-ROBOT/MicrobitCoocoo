@@ -15,10 +15,11 @@ enum MotorDirection {
 //% weight=70 icon="\uf0e7" color=#1B80C4
 namespace CooCoo {
     
+     
     /**
      * 设置电机
      */
-    //% blockId="coocoo_motor" block="电机 左侧 速度%leftSpeed=speedPicker| 右侧 速度%rightSpeed=speedPicker"
+    //% blockId="coocoo_motor" block="电机 左侧 速度%leftSpeed=speedPicker \\%| 右侧 速度%rightSpeed=speedPicker \\%"
     //% weight=100
     export function motorRun(leftSpeed: number, rightSpeed: number): void {
         let leftRotation = 0x0;
