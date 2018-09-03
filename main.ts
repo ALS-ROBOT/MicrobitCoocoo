@@ -13,12 +13,12 @@ enum MotorDirection {
 }
 
 //% weight=70 icon="\uf0e7" color=#1B80C4
-namespace CooCooTEST {
+namespace CooCoo {
     
     /**
      * 设置电机
      */
-    //% blockId="coocoo_motor_test" block="测试 %direction|方向 %rotation|速度 %speed"
+    //% blockId="coocoo_motor" block="电机 %direction|方向 %rotation|速度 %speed"
     //% speed.min=0 speed.max=255
     //% weight=108
     export function motorRun(direction: MotorDirection, rotation: MotorRotation, speed: number): void {
