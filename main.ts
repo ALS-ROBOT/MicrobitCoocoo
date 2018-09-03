@@ -18,8 +18,8 @@ namespace CooCoo {
     /**
      * Runs the motor at the given speed
      */
-    //% block="crickit run at %speed=speedPicker \\%"
-    export function run(speed: number):void {
+    //% blockId="coocoo_test" block="crickit run at %speed=speedPicker \\%"
+    export function run(speed: number): void {
 
     }
     
@@ -27,6 +27,7 @@ namespace CooCoo {
      * 设置电机
      */
     //% blockId="coocoo_motor" block="电机 左边 速度%leftSpeed=speedPicker \\%| 右侧 速度%rightSpeed=speedPicker \\%"
+    //% speed.min=-100 speed.max=100
     //% weight=100
     export function motorRun(leftSpeed: number, rightSpeed: number): void {
         let leftRotation = 0x0;
