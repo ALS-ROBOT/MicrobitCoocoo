@@ -30,7 +30,7 @@ namespace CooCoo {
         if(rightRotation < 0){
             rightRotation = 0x1;
         }
-
+        control.waitMicros(20);//等一会
        //左电机
         pins.analogWritePin(AnalogPin.P15, Math.abs(leftSpeed));
         pins.digitalWritePin(DigitalPin.P12, leftRotation);
