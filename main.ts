@@ -31,8 +31,19 @@ enum BeatList {
     HALF = 200,
     //% block="整拍"
     FULL = 400,
-    //% block="双拍""
+    //% block="双拍"
     DOUBLE = 800
+}
+
+enum Patrol{
+    //% block="□□"
+    white_white = 1,
+    //% block="□■"
+    white_black = 2,
+    //% block="■□"
+    black_white = 3,
+    //% block="■■"
+    black_black = 4
 }
 
 //% weight=70 icon="\uf0e7" color=#1B80C4
@@ -133,6 +144,45 @@ namespace CooCoo {
         //pins.i2cWriteBuffer(0x02, buf);
     }
     
+    //% weight=79
+    //% blockId=coocoo_patrol block="巡线test %patrol"
+    export function readPatrol(patrol:Patrol): boolean {
+
+        // let p1 = pins.digitalReadPin(DigitalPin.P13);
+        // let p2 = pins.digitalReadPin(DigitalPin.P14);
+
+        if(patrol == Patrol.white_white){
+            if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        if(patrol == Patrol.white_black){
+            if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 1){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        if(patrol == Patrol.black_white){
+            if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 0){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        if(patrol == Patrol.black_black){
+            if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 1){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
 
 }
 
