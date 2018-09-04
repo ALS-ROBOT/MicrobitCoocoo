@@ -145,7 +145,7 @@ namespace CooCoo {
     }
     
     //% weight=79
-    //% blockId=coocoo_patrol block="巡线test %patrol"
+    //% blockId=coocoo_patrol block="巡线测试 %patrol"
     export function readPatrol(patrol:Patrol): number {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P13);
