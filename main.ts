@@ -146,40 +146,40 @@ namespace CooCoo {
     
     //% weight=79
     //% blockId=coocoo_patrol block="巡线test %patrol"
-    export function readPatrol(patrol:Patrol): boolean {
+    export function readPatrol(patrol:Patrol): number {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P13);
         // let p2 = pins.digitalReadPin(DigitalPin.P14);
 
         if(patrol == Patrol.white_white){
             if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 0){
-                return true;
+                return 1;
             }else{
-                return false;
+                return 0;
             }
         }
 
         if(patrol == Patrol.white_black){
             if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 1){
-                return true;
+                return 1;
             }else{
-                return false;
+                return 0;
             }
         }
 
         if(patrol == Patrol.black_white){
             if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 0){
-                return true;
+                return 1;
             }else{
-                return false;
+                return 0;
             }
         }
 
         if(patrol == Patrol.black_black){
             if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 1){
-                return true;
+                return 1;
             }else{
-                return false;
+                return 0;
             }
         }
     }
