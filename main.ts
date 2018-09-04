@@ -101,7 +101,7 @@ namespace CooCoo {
      * 设置蜂鸣器
      */
     //% weight=10
-    //% blockId="coocoo_buzz" block="播放音符 %tone| ，%beat 拍"
+    //% blockId="coocoo_buzz" block="播放音符 %tone| 节拍 %beat"
     export function buzz(tone: ToneHzTable, beat: BeatList): void {
 
         let buf = pins.createBuffer(4);
@@ -110,9 +110,9 @@ namespace CooCoo {
         buf[1] =  (tone>>8)&0xff;
         buf[2] = beat&0xff;
         buf[3] =  (beat>>8)&0xff;
-        
+
         //右电机
-        pins.analogWritePin(AnalogPin.P0, buf);
+        pins.analogWritePin(AnalogPin.P0, 262);
     }
 
 }
