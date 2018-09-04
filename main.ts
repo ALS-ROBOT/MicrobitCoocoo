@@ -35,24 +35,6 @@ enum BeatList {
     DOUBLE = 800
 }
 
-// enum Patrol{
-//     //% block="左侧"
-//     PatrolLeft=13,
-//     //% block="右侧"
-//     PatrolRight=14
-// }
-
-enum Patrol{
-    //% block="□□"
-    white_white = 1,
-    //% block="□■"
-    white_black = 2,
-    //% block="■□"
-    black_white = 3,
-    //% block="■■"
-    black_black = 4,
-}
-
 //% weight=70 icon="\uf0e7" color=#1B80C4
 namespace CooCoo {
     /**
@@ -104,7 +86,7 @@ namespace CooCoo {
     /**
      * 停止所有电机
      */
-    //% weight=98
+    //% weight=10
     //% blockId="coocoo_stopAll" block="停止所有电机"
     export function motorStopAll(): void {
         //右电机
@@ -118,8 +100,8 @@ namespace CooCoo {
     /**
      * 设置蜂鸣器
      */
-    //% weight=89
-    //% blockId="coocoo_buzz" block="播放音符 %tone| 节拍 %beat"
+    //% weight=10
+    //% blockId="coocoo_buzz" block="play音符 %tone| 节拍 %beat"
     export function buzz(tone: ToneHzTable, beat: BeatList): void {
 
         let buf = pins.createBuffer(4);
@@ -150,66 +132,7 @@ namespace CooCoo {
         pins.analogWritePin(AnalogPin.P0, 1023);
         //pins.i2cWriteBuffer(0x02, buf);
     }
-
-    //% weight=79
-    //% blockId=coocoo_patrol block="巡线传感器 %patrol"
-    export function readPatrol(patrol:Patrol):boolean{
-
-        // let p1 = pins.digitalReadPin(DigitalPin.P13);
-        // let p2 = pins.digitalReadPin(DigitalPin.P14);
-
-        if(patrol == Patrol.white_white){
-            if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 0){
-                return true;
-            }else{
-                return false;
-            }
-        }
-
-        if(patrol == Patrol.white_black){
-            if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 1){
-                return true;
-            }else{
-                return false;
-            }
-        }
-
-        if(patrol == Patrol.black_white){
-            if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 0){
-                return true;
-            }else{
-                return false;
-            }
-        }
-
-        if(patrol == Patrol.black_black){
-            if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 1){
-                return true;
-            }else{
-                return false;
-            }
-        }
-    }
-
-    //% blockId=coocoo_sensor block=" 障碍物距离 cm"
-    //% weight=69
-    export function sensor(maxCmDistance = 500): number {
-        // send pulse
-        // pins.setPull(DigitalPin.P2, PinPullMode.PullNone);
-        // pins.digitalWritePin(DigitalPin.P2, 0);
-        // control.waitMicros(2);
-        // pins.digitalWritePin(DigitalPin.P2, 1);
-        // control.waitMicros(10);
-        // pins.digitalWritePin(DigitalPin.P2, 0);  
-
-        // read pulse
-        let d = pins.pulseIn(DigitalPin.P2, PulseValue.High, maxCmDistance * 42);
-        console.log("Distance: " + d/42);
-        
-        basic.pause(50)
-
-        return d / 42;
-    }
+    
 
 }
 
