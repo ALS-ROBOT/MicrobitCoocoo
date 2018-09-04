@@ -145,46 +145,41 @@ namespace CooCoo {
     }
     
     //% weight=79
-    //% blockId=coocoo_patrol block="巡线啊 %patrol"
-    export function readPatrol(patrol:Patrol): number {
+    //% blockId=coocoo_patrol block="巡线啊呸 %patrol"
+    export function readPatrol(patrol:Patrol): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P13);
         // let p2 = pins.digitalReadPin(DigitalPin.P14);
 
         if(patrol == Patrol.white_white){
             if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 0){
-                return 1;
+                return true;
             }else{
-                return 0;
+                return false;
             }
-        }
-
-        if(patrol == Patrol.white_black){
+        }else if(patrol == Patrol.white_black){
             if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 1){
-                return 1;
+                return true;
             }else{
-                return 0;
+                return false;
             }
-        }
-
-        if(patrol == Patrol.black_white){
+        }else if(patrol == Patrol.black_white){
             if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 0){
-                return 1;
+                return true;
             }else{
-                return 0;
+                return false;
             }
-        }
-
-        if(patrol == Patrol.black_black){
+        }else if(patrol == Patrol.black_black){
             if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 1){
-                return 1;
+                return true;
             }else{
-                return 0;
+                return false;
             }
+        }else{
+            return false;
         }
-
-        return -1;
     }
+
 
 }
 
