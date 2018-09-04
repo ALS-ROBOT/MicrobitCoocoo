@@ -101,7 +101,7 @@ namespace CooCoo {
      * 设置蜂鸣器
      */
     //% weight=10
-    //% blockId="coocoo_buzz" block="播放音符二进制 %tone| 节拍 %beat"
+    //% blockId="coocoo_buzz" block="播放音符 %tone| 节拍 %beat"
     export function buzz(tone: ToneHzTable, beat: BeatList): void {
 
         let buf = pins.createBuffer(4);
