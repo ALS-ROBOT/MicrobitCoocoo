@@ -236,7 +236,8 @@ namespace CooCoo {
     //% weight=89
     //% blockId="coocoo_tone" block="播放音符 %tone| 持续 %beat 节拍"
     export function MyPlayTone(tone: ToneHzTable, beat: BeatList): void {
-        music.playTone(music.beat(tone),beat);
+        //music.playTone(music.beat(tone),beat);
+        music.playTone(262, music.beat(BeatFraction.Whole))
     }
 
     /**
@@ -244,8 +245,9 @@ namespace CooCoo {
      */
     //% weight=88
     //% blockId="coocoo_music" block="播放音乐 %song"
-    export function playMusic(song: MusicTable): void {
-        music.beginMelody(music.builtInMelody(song), MelodyOptions.Once);
+    export function MyPlayMusic(song: MusicTable): void {
+        // music.beginMelody(music.builtInMelody(song), MelodyOptions.Once);
+        music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
     }
 
     /**
@@ -253,9 +255,9 @@ namespace CooCoo {
      */
     //% weight=87
     //% blockId="coocoo_stop_tone" block="暂停播放 %beat 节拍"
-    export function stopTone(beat: BeatList): void {
-        music.rest(music.beat(beat));
-    }
+    // export function stopTone(beat: BeatList): void {
+    //     music.rest(music.beat(beat));
+    // }
 
     /**
      * Play a tone
@@ -264,9 +266,9 @@ namespace CooCoo {
     //% weight=86
     //% blockId=test_music_play_note
     //% block="play tone %note=test_device_note tone"
-    export function playTone(note: number, beat: BeatList) {
-        music.playTone(note,beat);
-    }
+    // export function playToneTest(note: number, beat: BeatList) {
+    //     music.playTone(note,beat);
+    // }
 
     /**
      * Get the frequency of a note.
@@ -279,9 +281,9 @@ namespace CooCoo {
     //% note.fieldEditor="note" note.defl="262"
     //% note.fieldOptions.decompileLiterals=true
     //% useEnumVal=1
-    export function noteFrequency(note: Note): number {
-        return note;
-    }
+    // export function noteFrequency(note: Note): number {
+    //     return note;
+    // }
 
     
     //% weight=79
