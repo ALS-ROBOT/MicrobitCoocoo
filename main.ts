@@ -1,9 +1,3 @@
-enum MotorRotation {
-    //% block="正转"
-    zheng,
-    //% block="反转"
-    fan
-}
 
 enum MotorDirection {
     //% block="左侧"
@@ -22,6 +16,30 @@ enum ToneHzTable {
     si = 494
 }
 
+enum BeatList {
+    //% block="1"
+    WHOLE = 1,
+    //% block="1/2"
+    HALF = 2,
+    //% block="1/4"
+    QUARTER = 3,
+    //% block="1/8"
+    EIGHTH = 4,
+    //% block="1/16"
+    SIXTEEN = 5,
+    //% block="2"
+    DOUBLE = 6,
+    //% block="4"
+    BREVE = 7
+}
+
+enum SongList {
+    //% block="生日歌"
+    birthday = 1,
+    //% block="婚礼进行曲"
+    wedding = 2
+}
+
 enum Patrol{
     //% block="□□"
     white_white = 1,
@@ -32,6 +50,7 @@ enum Patrol{
     //% block="■■"
     black_black = 4
 }
+
 //% weight=99 icon="\uf0e7" color=#1B80C4
 namespace CooCoo {
     /**
@@ -98,20 +117,49 @@ namespace CooCoo {
      * 播放音调
      */
     //% weight=89
-    //% blockId="coocoo_tone" block="播放音符"
-    export function MyPlayTone(): void {
+    //% blockId="coocoo_tone" block="播放音调 %tone| %beat 节拍"
+    export function MyPlayTone(tone:ToneHzTable, beat: BeatList): void {
         //music.playTone(music.beat(tone),beat);
-        music.playTone(262, music.beat(BeatFraction.Whole))
+        switch(beat){
+            case 1:
+            music.playTone(tone, music.beat(BeatFraction.Whole));
+            break;
+            case 2:
+            music.playTone(tone, music.beat(BeatFraction.Half));
+            break;
+            case 3:
+            music.playTone(tone, music.beat(BeatFraction.Quarter));
+            break;
+            case 4:
+            music.playTone(tone, music.beat(BeatFraction.Eighth));
+            break;
+            case 5:
+            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+            break;
+            case 6:
+            music.playTone(tone, music.beat(BeatFraction.Double));
+            break;
+            case 7:
+            music.playTone(tone, music.beat(BeatFraction.Breve));
+            break;
+            default:
+            music.playTone(tone, music.beat(BeatFraction.Whole));
+        }
+        
     }
 
     /**
      * 播放音乐
      */
     //% weight=88
-    //% blockId="coocoo_music" block="播放音乐"
-    export function MyPlayMusic(): void {
-        // music.beginMelody(music.builtInMelody(song), MelodyOptions.Once);
-        music.beginMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+    //% blockId="coocoo_music" block="播放音乐 %song"
+    export function MyPlayMusic(song: SongList): void {
+        if(song == SongList.wedding){
+            music.beginMelody(music.builtInMelody(Melodies.Wedding), MelodyOptions.Once);
+        }else{
+            music.beginMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once);
+        }
+        
     }
 
     //% weight=79
@@ -128,13 +176,13 @@ namespace CooCoo {
                 return false;
             }
         }else if(patrol == Patrol.white_black){
-            if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 1){
+            if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 0){
                 return true;
             }else{
                 return false;
             }
         }else if(patrol == Patrol.black_white){
-            if(pins.digitalReadPin(DigitalPin.P13) == 1 && pins.digitalReadPin(DigitalPin.P14) == 0){
+            if(pins.digitalReadPin(DigitalPin.P13) == 0 && pins.digitalReadPin(DigitalPin.P14) == 1){
                 return true;
             }else{
                 return false;
@@ -148,6 +196,27 @@ namespace CooCoo {
         }else{
             return true;
         }
+    }
+
+    //% blockId=coocoo_sensor block="障碍物距离（cm）"
+    //% weight=69
+    export function sensor(maxCmDistance = 500): number {
+        // send pulse
+        // pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
+        // pins.digitalWritePin(DigitalPin.P1, 0);
+        // control.waitMicros(2);
+        // pins.digitalWritePin(DigitalPin.P1, 1);
+        // control.waitMicros(10);
+        // pins.digitalWritePin(DigitalPin.P1, 0);
+        
+
+        // read pulse
+        let d = pins.pulseIn(AnalogPin.P2, PulseValue.High, maxCmDistance * 42);
+        // console.log("Distance: " + d/42);
+        
+        basic.pause(50)
+
+        return d / 42;
     }
 
 
