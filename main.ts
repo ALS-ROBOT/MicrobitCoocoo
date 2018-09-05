@@ -123,14 +123,14 @@ namespace CooCoo {
         if(beatInfo == BeatList.whole_beat){
             music.playTone(tone, music.beat(BeatFraction.Whole));
 
-        }else{
+        }else if(beatInfo == BeatList.half_beat){
             music.playTone(tone, music.beat(BeatFraction.Half));
 
-        }
-        // else if(beatInfo == BeatList.quarter_beat){
-        //     music.playTone(tone, music.beat(BeatFraction.Quarter));
+        }else{
+            music.playTone(tone, music.beat(BeatFraction.Quarter));
 
-        // }else if(beatInfo == BeatList.eighth_beat){
+        }
+        // else if(beatInfo == BeatList.eighth_beat){
         //     music.playTone(tone, music.beat(BeatFraction.Eighth));
 
         // }else if(beatInfo == BeatList.sixteen_beat){
