@@ -117,9 +117,9 @@ namespace CooCoo {
      * 播放音调
      */
     //% weight=89
-    //% blockId="coocoo_tone" block="播放音调 %tone  %beat 节拍"
+    //% blockId="coocoo_tone" block="播放音调 %tone| ，%beat 节拍"
     export function MyPlayTone(tone:ToneHzTable, beat:BeatList): void {
-        
+
         switch(beat){
             case BeatList.WHOLE:
             music.playTone(tone, music.beat(BeatFraction.Whole));
