@@ -117,28 +117,29 @@ namespace CooCoo {
      * 播放音调
      */
     //% weight=89
-    //% blockId="coocoo_tone" block="播放音调 %tone| %beat 节拍"
+    //% blockId="coocoo_tone" block="播放音调 %tone  %beat 节拍"
     export function MyPlayTone(tone:ToneHzTable, beat:BeatList): void {
+        
         switch(beat){
-            case 1:
+            case BeatList.WHOLE:
             music.playTone(tone, music.beat(BeatFraction.Whole));
             break;
-            case 2:
+            case BeatList.HALF:
             music.playTone(tone, music.beat(BeatFraction.Half));
             break;
-            case 3:
+            case BeatList.QUARTER:
             music.playTone(tone, music.beat(BeatFraction.Quarter));
             break;
-            case 4:
+            case BeatList.EIGHTH:
             music.playTone(tone, music.beat(BeatFraction.Eighth));
             break;
-            case 5:
+            case BeatList.SIXTEEN:
             music.playTone(tone, music.beat(BeatFraction.SixTeenth));
             break;
-            case 6:
+            case BeatList.DOUBLE:
             music.playTone(tone, music.beat(BeatFraction.Double));
             break;
-            case 7:
+            case BeatList.BREVE:
             music.playTone(tone, music.beat(BeatFraction.Breve));
             break;
             default:
