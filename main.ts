@@ -117,7 +117,7 @@ namespace CooCoo {
      * 播放音调
      */
     //% weight=89
-    //% blockId="coocoo_tone" block="播放音调 %tone| ，节拍 %beat"
+    //% blockId="coocoo_tone" block="播放音调 %tone| ，节拍 %beatInfo"
     export function MyPlayTone(tone:ToneHzTable, beatInfo:BeatList): void {
 
         if(beatInfo == BeatList.whole_beat){
