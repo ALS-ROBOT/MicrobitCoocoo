@@ -120,23 +120,23 @@ namespace CooCoo {
     //% blockId="coocoo_tone" block="播放音调 %tone| ，节拍 %beat"
     export function MyPlayTone(tone:ToneHzTable, beat:BeatList): void {
 
-        if(beat == BeatList.WHOLE){
-            music.playTone(tone, music.beat(BeatFraction.Whole));
-        }else if(beat == BeatList.HALF){
+        // if(beat == BeatList.WHOLE){
+        //     music.playTone(tone, music.beat(BeatFraction.Whole));
+        // }else if(beat == BeatList.HALF){
             music.playTone(tone, music.beat(BeatFraction.Half));
-        }else if(beat == BeatList.QUARTER){
-            music.playTone(tone, music.beat(BeatFraction.Quarter));
-        }else if(beat == BeatList.EIGHTH){
-            music.playTone(tone, music.beat(BeatFraction.Eighth));
-        }else if(beat == BeatList.SIXTEEN){
-            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
-        }else if(beat == BeatList.DOUBLE){
-            music.playTone(tone, music.beat(BeatFraction.Double));
-        }else if(beat == BeatList.BREVE){
-            music.playTone(tone, music.beat(BeatFraction.Breve));
-        }else{
-            music.playTone(tone, music.beat(BeatFraction.Whole));
-        }
+        // }else if(beat == BeatList.QUARTER){
+        //     music.playTone(tone, music.beat(BeatFraction.Quarter));
+        // }else if(beat == BeatList.EIGHTH){
+        //     music.playTone(tone, music.beat(BeatFraction.Eighth));
+        // }else if(beat == BeatList.SIXTEEN){
+        //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+        // }else if(beat == BeatList.DOUBLE){
+        //     music.playTone(tone, music.beat(BeatFraction.Double));
+        // }else if(beat == BeatList.BREVE){
+        //     music.playTone(tone, music.beat(BeatFraction.Breve));
+        // }else{
+        //     music.playTone(tone, music.beat(BeatFraction.Whole));
+        // }
         
     }
 
