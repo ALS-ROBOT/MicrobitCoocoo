@@ -117,34 +117,34 @@ namespace CooCoo {
      * 播放音调
      */
     //% weight=89
-    //% blockId="coocoo_tone" block="播放音调 %tone| %beat 节拍"
-    export function MyPlayTone(tone:ToneHzTable, beat: BeatList): void {
+    //% blockId="coocoo_tone" block="播放音调 %tone"
+    export function MyPlayTone(tone:ToneHzTable): void {
         //music.playTone(music.beat(tone),beat);
-        switch(beat){
-            case 1:
+        // switch(beat){
+        //     case 1:
             music.playTone(tone, music.beat(BeatFraction.Whole));
-            break;
-            case 2:
-            music.playTone(tone, music.beat(BeatFraction.Half));
-            break;
-            case 3:
-            music.playTone(tone, music.beat(BeatFraction.Quarter));
-            break;
-            case 4:
-            music.playTone(tone, music.beat(BeatFraction.Eighth));
-            break;
-            case 5:
-            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
-            break;
-            case 6:
-            music.playTone(tone, music.beat(BeatFraction.Double));
-            break;
-            case 7:
-            music.playTone(tone, music.beat(BeatFraction.Breve));
-            break;
-            default:
-            music.playTone(tone, music.beat(BeatFraction.Whole));
-        }
+        //     break;
+        //     case 2:
+        //     music.playTone(tone, music.beat(BeatFraction.Half));
+        //     break;
+        //     case 3:
+        //     music.playTone(tone, music.beat(BeatFraction.Quarter));
+        //     break;
+        //     case 4:
+        //     music.playTone(tone, music.beat(BeatFraction.Eighth));
+        //     break;
+        //     case 5:
+        //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+        //     break;
+        //     case 6:
+        //     music.playTone(tone, music.beat(BeatFraction.Double));
+        //     break;
+        //     case 7:
+        //     music.playTone(tone, music.beat(BeatFraction.Breve));
+        //     break;
+        //     default:
+        //     music.playTone(tone, music.beat(BeatFraction.Whole));
+        // }
         
     }
 
