@@ -253,7 +253,7 @@ namespace CooCoo {
      */
     //% weight=87
     //% blockId="coocoo_stop_tone" block="暂停播放 %beat 节拍"
-    export function playMusic(beat: BeatList): void {
+    export function stopTone(beat: BeatList): void {
         music.rest(music.beat(beat));
     }
 
