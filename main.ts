@@ -18,19 +18,19 @@ enum ToneHzTable {
 
 enum BeatList {
     //% block="1"
-    WHOLE = 1,
+    whole_beat = 1,
     //% block="1/2"
-    HALF = 2,
+    half_beat = 2,
     //% block="1/4"
-    QUARTER = 3,
+    quarter_beat = 3,
     //% block="1/8"
-    EIGHTH = 4,
+    eighth_beat = 4,
     //% block="1/16"
-    SIXTEEN = 5,
+    sixteen_beat = 5,
     //% block="2"
-    DOUBLE = 6,
+    double_beat = 6,
     //% block="4"
-    BREVE = 7
+    breve_beat = 7
 }
 
 enum SongList {
@@ -118,25 +118,33 @@ namespace CooCoo {
      */
     //% weight=89
     //% blockId="coocoo_tone" block="播放音调 %tone| ，节拍 %beat"
-    export function MyPlayTone(tone:ToneHzTable, beat:BeatList): void {
+    export function MyPlayTone(tone:ToneHzTable, beatInfo:BeatList): void {
 
-        // if(beat == BeatList.WHOLE){
-        //     music.playTone(tone, music.beat(BeatFraction.Whole));
-        // }else if(beat == BeatList.HALF){
+        if(beatInfo == BeatList.whole_beat){
+            music.playTone(tone, music.beat(BeatFraction.Whole));
+
+        }else if(beatInfo == BeatList.half_beat){
             music.playTone(tone, music.beat(BeatFraction.Half));
-        // }else if(beat == BeatList.QUARTER){
-        //     music.playTone(tone, music.beat(BeatFraction.Quarter));
-        // }else if(beat == BeatList.EIGHTH){
-        //     music.playTone(tone, music.beat(BeatFraction.Eighth));
-        // }else if(beat == BeatList.SIXTEEN){
-        //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
-        // }else if(beat == BeatList.DOUBLE){
-        //     music.playTone(tone, music.beat(BeatFraction.Double));
-        // }else if(beat == BeatList.BREVE){
-        //     music.playTone(tone, music.beat(BeatFraction.Breve));
-        // }else{
-        //     music.playTone(tone, music.beat(BeatFraction.Whole));
-        // }
+
+        }else if(beatInfo == BeatList.quarter_beat){
+            music.playTone(tone, music.beat(BeatFraction.Quarter));
+
+        }else if(beatInfo == BeatList.eighth_beat){
+            music.playTone(tone, music.beat(BeatFraction.Eighth));
+
+        }else if(beatInfo == BeatList.sixteen_beat){
+            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+
+        }else if(beatInfo == BeatList.double_beat){
+            music.playTone(tone, music.beat(BeatFraction.Double));
+
+        }else if(beatInfo == BeatList.breve_beat){
+            music.playTone(tone, music.beat(BeatFraction.Breve));
+
+        }else{
+            music.playTone(tone, music.beat(BeatFraction.Whole));
+
+        }
         
     }
 
