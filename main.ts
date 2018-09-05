@@ -18,19 +18,19 @@ enum ToneHzTable {
 
 enum BeatList {
     //% block="1"
-    whole_beat = 1,
+    whole_beat = 10,
     //% block="1/2"
-    half_beat = 2,
+    half_beat = 11,
     //% block="1/4"
-    quarter_beat = 3,
+    quarter_beat = 12,
     //% block="1/8"
-    eighth_beat = 4,
+    eighth_beat = 13,
     //% block="1/16"
-    sixteen_beat = 5,
+    sixteen_beat = 14,
     //% block="2"
-    double_beat = 6,
+    double_beat = 15,
     //% block="4"
-    breve_beat = 7
+    breve_beat = 16
 }
 
 enum SongList {
@@ -118,7 +118,7 @@ namespace CooCoo {
      */
     //% weight=89
     //% blockId="coocoo_tone" block="播放音调 %tone| ，节拍 %beatInfo"
-    export function MyPlayTone(tone:ToneHzTable, beatInfo:BeatList): void {
+    export function myPlayTone(tone:ToneHzTable, beatInfo:BeatList): void {
 
         if(beatInfo == BeatList.whole_beat){
             music.playTone(tone, music.beat(BeatFraction.Whole));
@@ -163,7 +163,7 @@ namespace CooCoo {
     }
 
     //% weight=79
-    //% blockId=coocoo_patrol block="巡线传感器 %patrol"
+    //% blockId="coocoo_patrol" block="巡线传感器 %patrol"
     export function readPatrol(patrol:Patrol): boolean {
 
         // let p1 = pins.digitalReadPin(DigitalPin.P13);
