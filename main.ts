@@ -144,19 +144,15 @@ namespace CooCoo {
         }
 
         
-        // if(beatInfo == BeatList.eighth_beat){
-        //     music.playTone(tone, music.beat(BeatFraction.Eighth));
+        if(beatInfo == BeatList.eighth_beat){
+            music.playTone(tone, music.beat(BeatFraction.Eighth));
 
-        // }
-        // control.waitMicros(10);
+        }
 
         // if(beatInfo == BeatList.sixteen_beat){
         //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
 
         // }
-        // control.waitMicros(10);
-        
-        // control.waitMicros(10);
         // if(beatInfo == BeatList.breve_beat){
         //     music.playTone(tone, music.beat(BeatFraction.Breve));
 
