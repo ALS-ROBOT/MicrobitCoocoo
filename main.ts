@@ -120,40 +120,19 @@ namespace CooCoo {
     //% blockId="coocoo_tone" block="播放音调 %tone| ，节拍 %beatInfo"
     export function myPlayTone(tone:ToneHzTable, beatInfo:BeatList): void {
 
-        if(beatInfo == BeatList.whole_beat){
-            music.playTone(tone, music.beat(BeatFraction.Whole));
+        var arr = [];
+        arr[10] = BeatFraction.Whole;
+        arr[11] = BeatFraction.Half;
+        arr[12] = BeatFraction.Quarter;
+        arr[13] = BeatFraction.Eighth;
+        arr[14] = BeatFraction.SixTeenth;
+        arr[15] = BeatFraction.Double;
+        arr[16] = BeatFraction.Breve;
 
-        }
         
-        if(beatInfo == BeatList.half_beat){
-            music.playTone(tone, music.beat(BeatFraction.Half));
+        music.playTone(tone, music.beat(arr[beatInfo]));
 
-        }
         
-        if(beatInfo == BeatList.quarter_beat){
-            music.playTone(tone, music.beat(BeatFraction.Quarter));
-
-        }
-
-        // if(beatInfo == BeatList.eighth_beat){
-        //     music.playTone(tone, music.beat(BeatFraction.Eighth));
-
-        // }
-
-        if(beatInfo == BeatList.sixteen_beat){
-            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
-
-        }
-        
-        // if(beatInfo == BeatList.double_beat){
-        //     music.playTone(tone, music.beat(BeatFraction.Double));
-
-        // }
-        
-        // if(beatInfo == BeatList.breve_beat){
-        //     music.playTone(tone, music.beat(BeatFraction.Breve));
-
-        // }
         
     }
 
