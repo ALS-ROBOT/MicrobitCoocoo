@@ -53,9 +53,7 @@ enum PingUnit {
     //% block="μs"
     MicroSeconds,
     //% block="cm"
-    Centimeters,
-    //% block="inches"
-    Inches
+    Centimeters
 }
 
 //% weight=99 icon="\uf0e7" color=#1B80C4
@@ -241,7 +239,6 @@ namespace CooCoo {
 
         switch (unit) {
             case BBPingUnit.Centimeters: return d / 58;
-            case BBPingUnit.Inches: return d / 148;
             default: return d;
         }
     }
