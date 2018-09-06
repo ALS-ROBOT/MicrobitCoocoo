@@ -50,11 +50,13 @@ enum Patrol{
 }
 
 enum PingUnit {
+    //% block="μs"
+    MicroSeconds,
     //% block="cm"
     Centimeters,
-    //% block="μs"
-    MicroSeconds
-    }
+    //% block="inches"
+    Inches
+}
 
 //% weight=99 icon="\uf0e7" color=#1B80C4
 namespace CooCoo {
@@ -220,26 +222,27 @@ namespace CooCoo {
 
     //% blockId=coocoo_sensor block="探测障碍物距离 %unit"
     //% weight=69
-    export function sensorDistance(unit: PingUnit, maxCmDistance = 500): number {
+    export function sensorDistance(unit: PingUnit): number {
         // send pulse
-        // pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
-        // pins.digitalWritePin(DigitalPin.P1, 0);
-        // control.waitMicros(2);
-        // pins.digitalWritePin(DigitalPin.P1, 1);
-        // control.waitMicros(10);
-        // pins.digitalWritePin(DigitalPin.P1, 0);
-        
-        
+        let trig = DigitalPin.P2;
+        let echo = DigitalPin.P2;
+
+        let maxCmDistance = 500;
+
+        pins.setPull(trig, PinPullMode.PullNone);
+        pins.digitalWritePin(trig, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(trig, 1);
+        control.waitMicros(10);
+        pins.digitalWritePin(trig, 0);
 
         // read pulse
-        let d = pins.pulseIn(DigitalPin.P2, PulseValue.High, maxCmDistance * 42);
-        //console.log("Distance: " + d/42);
-        
-        basic.pause(50)
+        let d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
 
         switch (unit) {
-            case PingUnit.Centimeters: return d / 42;
-            default: return d ;
+            case BBPingUnit.Centimeters: return d / 58;
+            case BBPingUnit.Inches: return d / 148;
+            default: return d;
         }
     }
 
