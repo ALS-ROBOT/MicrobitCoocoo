@@ -25,12 +25,10 @@ enum BeatList {
     quarter_beat = 12,
     //% block="1/8"
     eighth_beat = 13,
-    //% block="1/16"
-    sixteen_beat = 14,
     //% block="2"
-    double_beat = 15,
+    double_beat = 14,
     //% block="4"
-    breve_beat = 16
+    breve_beat = 15
 }
 
 enum SongList {
@@ -153,7 +151,7 @@ namespace CooCoo {
             music.playTone(tone, music.beat(BeatFraction.Breve));
 
         }
-
+        //1、16不行
         // if(beatInfo == BeatList.sixteen_beat){
         //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
 
