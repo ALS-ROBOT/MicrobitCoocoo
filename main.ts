@@ -120,7 +120,7 @@ namespace CooCoo {
     //% blockId="coocoo_tone" block="播放音调 %tone| ，节拍 %beatInfo"
     export function myPlayTone(tone:ToneHzTable, beatInfo:BeatList): void {
 
-        var arr = [];
+        let arr = [];
         arr[10] = BeatFraction.Whole;
         // arr[11] = BeatFraction.Half;
         // arr[12] = BeatFraction.Quarter;
@@ -128,7 +128,7 @@ namespace CooCoo {
         // arr[14] = BeatFraction.SixTeenth;
         // arr[15] = BeatFraction.Double;
         // arr[16] = BeatFraction.Breve;
-        // var beatValue = arr[beatInfo];
+        let beatValue = arr[beatInfo];
         control.waitMicros(10);
         music.playTone(tone, music.beat(beatValue));
 
