@@ -149,15 +149,17 @@ namespace CooCoo {
 
         }
 
-        if(beatInfo == BeatList.sixteen_beat){
-            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+        if(beatInfo == BeatList.breve_beat){
+            music.playTone(tone, music.beat(BeatFraction.Breve));
 
         }
 
-        // if(beatInfo == BeatList.breve_beat){
-        //     music.playTone(tone, music.beat(BeatFraction.Breve));
+        // if(beatInfo == BeatList.sixteen_beat){
+        //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
 
         // }
+
+        
         
     }
 
