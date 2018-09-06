@@ -222,17 +222,17 @@ namespace CooCoo {
     //% weight=69
     export function sensorDistance(unit: PingUnit, maxCmDistance = 500): number {
         // send pulse
-        pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
-        pins.digitalWritePin(DigitalPin.P1, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P1, 1);
-        control.waitMicros(10);
-        pins.digitalWritePin(DigitalPin.P1, 0);
+        // pins.setPull(DigitalPin.P1, PinPullMode.PullNone);
+        // pins.digitalWritePin(DigitalPin.P1, 0);
+        // control.waitMicros(2);
+        // pins.digitalWritePin(DigitalPin.P1, 1);
+        // control.waitMicros(10);
+        // pins.digitalWritePin(DigitalPin.P1, 0);
         
         
 
         // read pulse
-        let d = pins.pulseIn(AnalogPin.P2, PulseValue.High, maxCmDistance * 42);
+        let d = pins.pulseIn(DigitalPin.P2, PulseValue.High, maxCmDistance * 42);
         //console.log("Distance: " + d/42);
         
         basic.pause(50)
