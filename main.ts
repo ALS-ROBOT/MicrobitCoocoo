@@ -140,10 +140,10 @@ namespace CooCoo {
 
         // }
 
-        // if(beatInfo == BeatList.sixteen_beat){
-        //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+        if(beatInfo == BeatList.sixteen_beat){
+            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
 
-        // }
+        }
         
         // if(beatInfo == BeatList.double_beat){
         //     music.playTone(tone, music.beat(BeatFraction.Double));
