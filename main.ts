@@ -53,6 +53,9 @@ enum Patrol{
 
 //% weight=99 icon="\uf0e7" color=#1B80C4
 namespace CooCoo {
+
+
+
     /**
      * 设置电机
      */
@@ -124,38 +127,40 @@ namespace CooCoo {
             music.playTone(tone, music.beat(BeatFraction.Whole));
 
         }
-        control.waitMicros(10);
+       
         if(beatInfo == BeatList.half_beat){
             music.playTone(tone, music.beat(BeatFraction.Half));
 
         }
-        control.waitMicros(10);
+        
         if(beatInfo == BeatList.quarter_beat){
             music.playTone(tone, music.beat(BeatFraction.Quarter));
 
         }
 
-        control.waitMicros(10);
-        if(beatInfo == BeatList.eighth_beat){
-            music.playTone(tone, music.beat(BeatFraction.Eighth));
-
-        }
-        control.waitMicros(10);
-
-        if(beatInfo == BeatList.sixteen_beat){
-            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
-
-        }
-        control.waitMicros(10);
         if(beatInfo == BeatList.double_beat){
             music.playTone(tone, music.beat(BeatFraction.Double));
 
         }
-        control.waitMicros(10);
-        if(beatInfo == BeatList.breve_beat){
-            music.playTone(tone, music.beat(BeatFraction.Breve));
 
-        }
+        
+        // if(beatInfo == BeatList.eighth_beat){
+        //     music.playTone(tone, music.beat(BeatFraction.Eighth));
+
+        // }
+        // control.waitMicros(10);
+
+        // if(beatInfo == BeatList.sixteen_beat){
+        //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+
+        // }
+        // control.waitMicros(10);
+        
+        // control.waitMicros(10);
+        // if(beatInfo == BeatList.breve_beat){
+        //     music.playTone(tone, music.beat(BeatFraction.Breve));
+
+        // }
         
     }
 
