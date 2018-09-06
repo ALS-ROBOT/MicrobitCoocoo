@@ -135,25 +135,25 @@ namespace CooCoo {
 
         }
 
-        if(beatInfo == BeatList.eighth_beat){
-            music.playTone(tone, music.beat(BeatFraction.Eighth));
+        // if(beatInfo == BeatList.eighth_beat){
+        //     music.playTone(tone, music.beat(BeatFraction.Eighth));
 
-        }
+        // }
 
-        if(beatInfo == BeatList.sixteen_beat){
-            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+        // if(beatInfo == BeatList.sixteen_beat){
+        //     music.playTone(tone, music.beat(BeatFraction.SixTeenth));
 
-        }
+        // }
         
-        if(beatInfo == BeatList.double_beat){
-            music.playTone(tone, music.beat(BeatFraction.Double));
+        // if(beatInfo == BeatList.double_beat){
+        //     music.playTone(tone, music.beat(BeatFraction.Double));
 
-        }
+        // }
         
-        if(beatInfo == BeatList.breve_beat){
-            music.playTone(tone, music.beat(BeatFraction.Breve));
+        // if(beatInfo == BeatList.breve_beat){
+        //     music.playTone(tone, music.beat(BeatFraction.Breve));
 
-        }
+        // }
         
     }
 
