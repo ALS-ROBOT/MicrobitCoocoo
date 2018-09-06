@@ -49,6 +49,13 @@ enum Patrol{
     black_black = 4
 }
 
+enum PingUnit {
+    //% block="cm"
+    Centimeters,
+    //% block="μs"
+    MicroSeconds
+    }
+
 //% weight=99 icon="\uf0e7" color=#1B80C4
 namespace CooCoo {
 
