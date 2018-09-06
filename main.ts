@@ -128,12 +128,10 @@ namespace CooCoo {
         arr[14] = BeatFraction.SixTeenth;
         arr[15] = BeatFraction.Double;
         arr[16] = BeatFraction.Breve;
+        var beatValue = arr[beatInfo];
+        control.waitMicros(10);
+        music.playTone(tone, music.beat(beatValue));
 
-        
-        music.playTone(tone, music.beat(arr[beatInfo]));
-
-        
-        
     }
 
     /**
