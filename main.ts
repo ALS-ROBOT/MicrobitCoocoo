@@ -120,18 +120,43 @@ namespace CooCoo {
     //% blockId="coocoo_tone" block="播放音调 %tone| ，节拍 %beatInfo"
     export function myPlayTone(tone:ToneHzTable, beatInfo:BeatList): void {
 
-        let arr = [];
-        arr[10] = BeatFraction.Whole;
-        // arr[11] = BeatFraction.Half;
-        // arr[12] = BeatFraction.Quarter;
-        // arr[13] = BeatFraction.Eighth;
-        // arr[14] = BeatFraction.SixTeenth;
-        // arr[15] = BeatFraction.Double;
-        // arr[16] = BeatFraction.Breve;
-        let beatValue = arr[beatInfo];
-        control.waitMicros(10);
-        music.playTone(tone, music.beat(beatValue));
+        if(beatInfo == BeatList.whole_beat){
+            music.playTone(tone, music.beat(BeatFraction.Whole));
 
+        }
+        control.waitMicros(10);
+        if(beatInfo == BeatList.half_beat){
+            music.playTone(tone, music.beat(BeatFraction.Half));
+
+        }
+        control.waitMicros(10);
+        if(beatInfo == BeatList.quarter_beat){
+            music.playTone(tone, music.beat(BeatFraction.Quarter));
+
+        }
+
+        control.waitMicros(10);
+        if(beatInfo == BeatList.eighth_beat){
+            music.playTone(tone, music.beat(BeatFraction.Eighth));
+
+        }
+        control.waitMicros(10);
+
+        if(beatInfo == BeatList.sixteen_beat){
+            music.playTone(tone, music.beat(BeatFraction.SixTeenth));
+
+        }
+        control.waitMicros(10);
+        if(beatInfo == BeatList.double_beat){
+            music.playTone(tone, music.beat(BeatFraction.Double));
+
+        }
+        control.waitMicros(10);
+        if(beatInfo == BeatList.breve_beat){
+            music.playTone(tone, music.beat(BeatFraction.Breve));
+
+        }
+        
     }
 
     /**
