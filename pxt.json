@@ -3,7 +3,7 @@
     "dependencies": {
         "core": "*"
     },
-    "description": "奥松CooCoo智能编程机器人",
+    "description": "奥松CooCoo智能编程机器人Microbit版",
     "icon": "./coocoo.jpg",
     "license": "MIT",
     "files": [
